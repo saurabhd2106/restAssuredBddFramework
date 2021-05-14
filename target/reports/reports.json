@@ -11,17 +11,31 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 311029500,
+              "status": "passed"
             },
             "line": 4,
             "name": "user is logged in to spotify account",
-            "match": {},
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.user_is_logged_in_to_spotify_account()"
+            },
             "keyword": "Given "
           }
         ]
       },
       {
-        "start_timestamp": "2021-05-14T09:53:59.502Z",
+        "start_timestamp": "2021-05-14T11:03:52.728Z",
+        "before": [
+          {
+            "result": {
+              "duration": 745055000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.setup()"
+            }
+          }
+        ],
         "line": 6,
         "name": "",
         "description": "\t\tCreate a playlist",
@@ -31,20 +45,26 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 1717203700,
+              "status": "passed"
             },
             "line": 9,
             "name": "user creates a playlist with name Saurabh Playlist",
-            "match": {},
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.user_creates_a_playlist_with_name_Saurabh_Playlist()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 871055600,
+              "status": "passed"
             },
             "line": 10,
             "name": "Playlist is created successfully",
-            "match": {},
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.playlist_is_created_successfully()"
+            },
             "keyword": "Then "
           }
         ]
@@ -58,17 +78,30 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 2998800,
+              "status": "passed"
             },
             "line": 4,
             "name": "user is logged in to spotify account",
-            "match": {},
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.user_is_logged_in_to_spotify_account()"
+            },
             "keyword": "Given "
           }
         ]
       },
       {
-        "start_timestamp": "2021-05-14T09:54:00.119Z",
+        "start_timestamp": "2021-05-14T11:03:56.793Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.setup()"
+            }
+          }
+        ],
         "line": 13,
         "name": "",
         "description": "\t\tGet all playlist",
@@ -78,20 +111,26 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 336153100,
+              "status": "passed"
             },
             "line": 16,
             "name": "user request for all his playlist",
-            "match": {},
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.user_request_for_all_his_playlist()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 25003400,
+              "status": "passed"
             },
             "line": 17,
             "name": "all playlist are listed",
-            "match": {},
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.all_playlist_are_listed()"
+            },
             "keyword": "Then "
           }
         ]
@@ -105,17 +144,30 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 3981300,
+              "status": "passed"
             },
             "line": 4,
             "name": "user is logged in to spotify account",
-            "match": {},
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.user_is_logged_in_to_spotify_account()"
+            },
             "keyword": "Given "
           }
         ]
       },
       {
-        "start_timestamp": "2021-05-14T09:54:00.154Z",
+        "start_timestamp": "2021-05-14T11:03:57.172Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.setup()"
+            }
+          }
+        ],
         "line": 19,
         "name": "",
         "description": "\t\tUdate a playlist",
@@ -125,38 +177,50 @@
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 352451900,
+              "status": "passed"
             },
             "line": 22,
             "name": "user creates a playlist with name Saurabh Playlist",
-            "match": {},
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.user_creates_a_playlist_with_name_Saurabh_Playlist()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 27999500,
+              "status": "passed"
             },
             "line": 23,
             "name": "Playlist is created successfully",
-            "match": {},
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.playlist_is_created_successfully()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 307680500,
+              "status": "passed"
             },
             "line": 24,
             "name": "user updates the above playlist to name Saurabh Fav Playlist",
-            "match": {},
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.user_updates_the_above_playlist_to_name_Saurabh_Fav_Playlist()"
+            },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 3000300,
+              "status": "passed"
             },
             "line": 25,
             "name": "the playlist is updated",
-            "match": {},
+            "match": {
+              "location": "com.spotify.stepDefinition.SpotifyPlaylistTestSteps.the_playlist_is_updated()"
+            },
             "keyword": "Then "
           }
         ]
