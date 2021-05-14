@@ -1,21 +1,21 @@
 package com.spotify.stepDefinition;
 
+import static com.spotify.specs.Specifications.getRequestSpecification;
+import static com.spotify.specs.Specifications.getResponseSpecification;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
-import static com.spotify.specs.Specifications.*;
+import com.spotify.pojo.Playlist;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 public class SpotifyPlaylistTestSteps {
 
-	
 	private RequestSpecification requestSpec;
 
 	private Response response;
@@ -36,11 +36,10 @@ public class SpotifyPlaylistTestSteps {
 
 	@When("user creates a playlist with name Saurabh Playlist")
 	public void user_creates_a_playlist_with_name_Saurabh_Playlist() {
-		String requestPayload = "{\r\n" + "    \"name\" : \"Saurabh Playlist\",\r\n"
-				+ "    \"description\" : \"Saurabh's fav songs playlist\",\r\n" + "    \"public\" : false\r\n" + "\r\n"
-				+ "}";
 
-		response = requestSpec.when().body(requestPayload).post("/playlists");
+		Playlist playlist = preparePlaylistRequestPayload("GE Healthcare Playlist", "Test Playlist", false, false);
+
+		response = requestSpec.when().body(playlist).post("/playlists");
 
 	}
 
@@ -68,12 +67,9 @@ public class SpotifyPlaylistTestSteps {
 	@When("user updates the above playlist to name Saurabh Fav Playlist")
 	public void user_updates_the_above_playlist_to_name_Saurabh_Fav_Playlist() {
 
-		String updatedRequestPayload = "{\r\n" + "    \"name\" : \"Saurabh fav Playlist\",\r\n"
-				+ "    \"description\" : \"Saurabh fav songs playlist\",\r\n" + "    \"public\" : false\r\n" + "\r\n"
-				+ "}";
+		Playlist playlist = preparePlaylistRequestPayload("Updated Playlist", "Test Playlist", false, false);
 
-		response = given(getRequestSpecification())
-				.pathParam("playlist_id", playlistId).when().body(updatedRequestPayload)
+		response = given(getRequestSpecification()).pathParam("playlist_id", playlistId).when().body(playlist)
 				.put("/playlists/{playlist_id}");
 	}
 
@@ -81,6 +77,18 @@ public class SpotifyPlaylistTestSteps {
 	public void the_playlist_is_updated() {
 
 		response.then().spec(getResponseSpecification()).statusCode(200);
+	}
+
+	private Playlist preparePlaylistRequestPayload(String name, String description, boolean publicStatus,
+			boolean collStatus) {
+		Playlist playlist = new Playlist();
+
+		playlist.setName("GE Healthcare playlist updated");
+		playlist.setPublicStatus(false);
+		playlist.setDescription("Test Playlist");
+		playlist.setCollaborative(false);
+
+		return playlist;
 	}
 
 }
