@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="3" tests="3" time="0.957">
+    <testcase classname="Spotify Playlist" name="_2" time="0.397">
+        <skipped><![CDATA[Given user is logged in to spotify account..................................undefined
+When user creates a playlist with name Saurabh Playlist.....................undefined
+Then Playlist is created successfully.......................................undefined
+]]></skipped>
+    </testcase>
+    <testcase classname="Spotify Playlist" name="_3" time="0.018">
+        <skipped><![CDATA[Given user is logged in to spotify account..................................undefined
+When user request for all his playlist......................................undefined
+Then all playlist are listed................................................undefined
+]]></skipped>
+    </testcase>
+    <testcase classname="Spotify Playlist" name="_4" time="0.022">
+        <skipped><![CDATA[Given user is logged in to spotify account..................................undefined
+When user creates a playlist with name Saurabh Playlist.....................undefined
+And Playlist is created successfully........................................undefined
+And user updates the above playlist to name Saurabh Fav Playlist............undefined
+Then the playlist is updated................................................undefined
+]]></skipped>
+    </testcase>
+</testsuite>
