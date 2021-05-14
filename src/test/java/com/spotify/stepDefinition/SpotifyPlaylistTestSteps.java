@@ -3,6 +3,8 @@ package com.spotify.stepDefinition;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
+import static com.spotify.specs.Specifications.*;
+
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,8 +15,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class SpotifyPlaylistTestSteps {
 
-	private String access_token = "Bearer BQAeqt506W03VomEl4VjmWykkrZAGM9UWZS6fh7bLmeJqwJe29fy73chid4BFu493pcbdhedA_5hMF8TFVZSyTYVUYYq4FV2MXUVyfc6U2F2zWfblRNS3v_XbeFkmtHWwW2lUi0MN2-s2q43PEsI6OIFGpOzIIThG6NQgjwNBH9c9zOf_iYcXirvQ74VaugEqnjb2n0SV0sYVrc19XH4Dqeui3J-_b02Ch4J3JONouPOEMUt";
-
+	
 	private RequestSpecification requestSpec;
 
 	private Response response;
@@ -29,7 +30,7 @@ public class SpotifyPlaylistTestSteps {
 	@Given("user is logged in to spotify account")
 	public void user_is_logged_in_to_spotify_account() {
 
-		requestSpec = given().contentType(ContentType.JSON).header("Authorization", access_token).log().all();
+		requestSpec = given(getRequestSpecification());
 
 	}
 
@@ -46,7 +47,7 @@ public class SpotifyPlaylistTestSteps {
 	@Then("Playlist is created successfully")
 	public void playlist_is_created_successfully() {
 
-		response.then().log().all().statusCode(201);
+		response.then().spec(getResponseSpecification()).statusCode(201);
 
 		playlistId = response.then().extract().path("id");
 	}
@@ -60,7 +61,7 @@ public class SpotifyPlaylistTestSteps {
 	@Then("all playlist are listed")
 	public void all_playlist_are_listed() {
 
-		response.then().log().all().statusCode(200);
+		response.then().spec(getResponseSpecification()).statusCode(200);
 
 	}
 
@@ -71,7 +72,7 @@ public class SpotifyPlaylistTestSteps {
 				+ "    \"description\" : \"Saurabh fav songs playlist\",\r\n" + "    \"public\" : false\r\n" + "\r\n"
 				+ "}";
 
-		response = given().contentType(ContentType.JSON).header("Authorization", access_token).log().all()
+		response = given(getRequestSpecification())
 				.pathParam("playlist_id", playlistId).when().body(updatedRequestPayload)
 				.put("/playlists/{playlist_id}");
 	}
@@ -79,7 +80,7 @@ public class SpotifyPlaylistTestSteps {
 	@Then("the playlist is updated")
 	public void the_playlist_is_updated() {
 
-		response.then().log().all().statusCode(200);
+		response.then().spec(getResponseSpecification()).statusCode(200);
 	}
 
 }
