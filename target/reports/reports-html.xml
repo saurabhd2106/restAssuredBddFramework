@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="5.39">
-    <testcase classname="Spotify Playlist" name="_2" time="3.942">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="9.016">
+    <testcase classname="Spotify Playlist" name="_2" time="7.314">
         <system-out><![CDATA[Given user is logged in to spotify account..................................passed
 When user creates a playlist with name Saurabh Playlist.....................passed
 Then Playlist is created successfully.......................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Spotify Playlist" name="_3" time="0.373">
+    <testcase classname="Spotify Playlist" name="_3" time="0.434">
         <system-out><![CDATA[Given user is logged in to spotify account..................................passed
 When user request for all his playlist......................................passed
 Then all playlist are listed................................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Spotify Playlist" name="_4" time="0.702">
+    <testcase classname="Spotify Playlist" name="_4" time="0.712">
         <system-out><![CDATA[Given user is logged in to spotify account..................................passed
 When user creates a playlist with name Saurabh Playlist.....................passed
 And Playlist is created successfully........................................passed

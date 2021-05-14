@@ -1,22 +1,19 @@
 package com.spotify.stepDefinition;
 
-import static com.spotify.specs.Specifications.getRequestSpecification;
 import static com.spotify.specs.Specifications.getResponseSpecification;
 import static io.restassured.RestAssured.baseURI;
-import static io.restassured.RestAssured.given;
 
 import com.spotify.pojo.Playlist;
+import com.spotify.requests.PlaylistApi;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 
 public class SpotifyPlaylistTestSteps {
 
-	private RequestSpecification requestSpec;
 
 	private Response response;
 
@@ -30,7 +27,7 @@ public class SpotifyPlaylistTestSteps {
 	@Given("user is logged in to spotify account")
 	public void user_is_logged_in_to_spotify_account() {
 
-		requestSpec = given(getRequestSpecification());
+		System.out.println("User logged in...");
 
 	}
 
@@ -39,7 +36,7 @@ public class SpotifyPlaylistTestSteps {
 
 		Playlist playlist = preparePlaylistRequestPayload("GE Healthcare Playlist", "Test Playlist", false, false);
 
-		response = requestSpec.when().body(playlist).post("/playlists");
+		response = PlaylistApi.postPlaylist(playlist);
 
 	}
 
@@ -54,7 +51,7 @@ public class SpotifyPlaylistTestSteps {
 	@When("user request for all his playlist")
 	public void user_request_for_all_his_playlist() {
 
-		response = requestSpec.when().get("/playlists");
+		response = PlaylistApi.getPlaylist();
 	}
 
 	@Then("all playlist are listed")
@@ -69,8 +66,7 @@ public class SpotifyPlaylistTestSteps {
 
 		Playlist playlist = preparePlaylistRequestPayload("Updated Playlist", "Test Playlist", false, false);
 
-		response = given(getRequestSpecification()).pathParam("playlist_id", playlistId).when().body(playlist)
-				.put("/playlists/{playlist_id}");
+		response = PlaylistApi.updatePlaylist(playlistId, playlist);
 	}
 
 	@Then("the playlist is updated")
